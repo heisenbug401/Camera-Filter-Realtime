@@ -1,0 +1,2 @@
+rootProject.name='Camera Filter Realtime'
+include ':app'
