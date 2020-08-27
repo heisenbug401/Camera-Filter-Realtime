@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
   private int mCurrentFilterId = 0;
 
-  private final String[] TITLES = {"Original", "EdgeDectection", "Pixelize",
+  private final String[] TITLES = {
+      "Original", "EdgeDectection", "Pixelize",
       "EMInterference", "TrianglesMosaic", "Legofied",
       "TileMosaic", "Blueorange", "ChromaticAberration",
       "BasicDeform", "Contrast", "NoiseWarp", "Refraction",
@@ -85,8 +86,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
     container = binding.container;
 
-    if (ContextCompat.checkSelfPermission(this,
-        Manifest.permission.CAMERA)
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
         != PackageManager.PERMISSION_GRANTED) {
       // Should we show an explanation?
       if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
@@ -245,7 +245,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
   @Override
   public boolean onDown(MotionEvent motionEvent) {
-
     return false;
   }
 

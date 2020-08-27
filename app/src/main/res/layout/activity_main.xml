@@ -34,12 +34,15 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/container">
 
-      <ImageView
+      <ImageButton
         android:id="@+id/capture"
         android:layout_width="72dp"
         android:layout_height="72dp"
+        android:layout_gravity="bottom|center"
         android:layout_margin="24dp"
-        android:src="@drawable/bg_circle_white"
+        android:background="@drawable/ic_shutter"
+        android:contentDescription="@string/capture"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/rv_filters"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
