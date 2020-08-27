@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class FiltersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
   List<FilterItem> dataSet = new ArrayList<>();
 
-  public FiltersAdapter(FiltersCallback callback) {
+  FiltersAdapter(FiltersCallback callback) {
     this.callback = callback;
   }
 
@@ -40,6 +41,8 @@ public class FiltersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
   public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int i) {
     final FilterItem filterItem = dataSet.get(i);
     MyViewHolder viewHolder = (MyViewHolder) holder;
+    viewHolder.name.setTextColor(ContextCompat.getColor(viewHolder.name.getContext(),
+        currentFilterIndex == i ? R.color.colorPrimary : R.color.white));
     viewHolder.name.setText(filterItem.filterName);
     viewHolder.line.setVisibility(currentFilterIndex == i ? View.VISIBLE : View.INVISIBLE);
     viewHolder.main.setOnClickListener(v -> callback.onFilterClick(filterItem, i));

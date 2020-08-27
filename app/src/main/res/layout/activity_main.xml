@@ -7,7 +7,7 @@
 
   </data>
 
-  <androidx.constraintlayout.widget.ConstraintLayout
+  <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -15,7 +15,7 @@
     <FrameLayout
       android:id="@+id/container"
       android:layout_width="match_parent"
-      android:layout_height="0dp"
+      android:layout_height="match_parent"
       android:background="@android:color/black"
       app:layout_constraintBottom_toTopOf="@+id/layout_bottom"
       app:layout_constraintEnd_toEndOf="parent"
@@ -24,41 +24,57 @@
 
     </FrameLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+      android:layout_gravity="bottom"
       android:id="@+id/layout_bottom"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="@android:color/black"
+      android:background="#33000000"
+      android:orientation="vertical"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/container">
 
-      <ImageButton
-        android:id="@+id/capture"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="24dp"
-        android:background="@drawable/ic_shutter"
-        android:contentDescription="@string/capture"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/rv_filters"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="24dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="12dp">
+
+        <ImageButton
+          android:id="@+id/capture"
+          android:layout_width="72dp"
+          android:layout_height="72dp"
+          android:layout_gravity="bottom|center"
+          android:background="@drawable/ic_shutter"
+          android:contentDescription="@string/capture"
+          android:scaleType="fitCenter"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+          android:id="@+id/thumb"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:src="@drawable/bg_circle_white"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
 
       <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_filters"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/capture" />
+        android:layout_height="wrap_content" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  </FrameLayout>
 
 </layout>

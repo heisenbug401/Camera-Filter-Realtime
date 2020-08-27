@@ -1,4 +1,8 @@
 <resources>
   <string name="app_name">Camera Filter Realtime</string>
-  <string name="capture">Capture</string>
+  <string name="capture">Chụp</string>
+  <string name="cancel">Loại bỏ</string>
+  <string name="settings">Cài đặt</string>
+  <string name="permissions_required">Cần cấp quyền</string>
+  <string name="permissions_required_msg">Để sử dụng Ứng dụng, hãy bật quyền Camera và Bộ nhớ</string>
 </resources>
